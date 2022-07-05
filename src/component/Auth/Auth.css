@@ -1,0 +1,184 @@
+
+.Authform{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 100vh;
+}
+
+.Authform .form{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    width: 900px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 5px #7e8492;
+}
+.Authform .form .form_hading{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.Authform .form .form_hading i{
+    font-size: 55px;
+    padding-bottom: 3rem;
+    color: #0B3329;
+}
+.Authform .form .avatarlogin{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+.Authform .form .avatarlogin .image{
+    position: absolute;
+    width: 450px;
+    height: 450px;
+}
+.linksignup{
+    margin-top: 1rem;
+    color: #0B3329;
+}
+.linksignup a{
+    color: #23584b;
+}
+.field__input{
+    margin-bottom: 2rem;
+    width: 80%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 12px;
+}
+.field__input .input{
+    height: 50px;
+    width: 100%;
+}
+.btn{
+    width: 80%;
+    height: 40px;
+    background-color: #0B3329;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+.btn:hover{
+    background-color: #23584b;
+}
+@media screen and (max-width:700px){
+    .Authform{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .Authform .form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .Authform .form .avatarlogin{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+        width: 96%;
+        border-radius: 12px;
+    }
+    .Authform .form .form_hading{
+        width: 96%;
+        border-radius: 10px;
+    }
+    .Authform .form .avatarlogin .image{
+        width: 160px;
+        height: 160px;
+    }
+}
+@media screen and (min-width:768px){
+    .Authform{
+        display: flex;
+        flex-direction: column;
+    }
+    .Authform .form{
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: row;
+        width: 98%;
+        align-items: center;
+    
+    }
+    .Authform .form .avatarlogin{
+        width: 96%;
+        border-radius: 12px;
+    }
+    .Authform .form .form_hading{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 96%;
+        border-radius: 10px;
+    }
+}
+@media screen and (min-width:1300px){
+    .Authform{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        height: 100vh;
+    }
+    
+    .Authform .form{
+        display: flex;
+        flex-direction: row;
+        height: 500px;
+        width: 900px;
+        border-radius: 12px;
+    }
+    .Authform .form .form_hading{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        border-bottom-right-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+    .Authform .form .avatarlogin{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+}
+@media only screen and (width:540px){
+    .Authform .form{
+        border: 1px solid black;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: 82%;
+        align-items: center; 
+    }
+    .Authform .form .avatarlogin{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+}

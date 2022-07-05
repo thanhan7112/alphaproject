@@ -1,0 +1,275 @@
+.home_content_page_chart .detail_1{
+    display: flex;
+    flex-direction: column;
+    /* background-color: #0B3329; */
+}
+.home_content_page_chart .detail_2{
+    display: flex;
+    flex-direction: column;
+    /* background-color: #0B3329; */
+}
+.home_content_page_chart .detail_1 .Rank_Name{
+    width: 200px;
+    display: flex;
+    height: 50px;
+    flex-direction: row;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #0B3329; */
+    border-radius: 12px;
+    margin: 10px 10px;
+    justify-content: space-between;
+}
+.home_content_page_chart .detail_1 .Change_time{
+    display: flex;
+    height:50%;
+    flex-direction: column;
+    color: white;
+    /* background-color: #52192a; */
+    border-radius: 12px;
+    margin: 10px 10px;
+    border-radius: 12px;
+}
+.detail_1 .Change_time .Change_time_line{
+    width: 100%;
+    height: calc(97% / 3);
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+.Change_time_line .Change_time_line_detail{
+    width: 49%;
+    height: 100%;
+    justify-content: row;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    border: 1px solid #1A1D23;
+    /* background-color: #1A1D23; */
+    border-radius: 6px;
+}
+.home_content_page .home_content_page_chart .detail_1 .Rank_Name .boxIMG{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+ .boxIMG .imgsize{
+    width: 100%;
+    height: 100%;
+}
+.Page_list_token_child_left .ListContent{
+    height: 50px;
+    border-bottom: 1px solid #001533;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    font-weight: 700;
+    color: #001533;
+}
+.home_content .home_content_page .home_content_page_list_token{
+    background-color: #F5F7FA;
+}
+.ListContent .ListToken_box{
+    width: calc(100% / 5);
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+}
+.Page_list_token_child_left .ListToken{
+    margin: 0 auto;
+    color: white;
+    width: 98%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 0.5rem;
+    margin-top: 0.5%;
+    border-radius: 5px;
+}
+.ListContent{color: white;}
+.ListToken:hover{
+    transform: scale(1.02);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    background-color: black;
+    color: #eff4fc;
+}
+.Page_list_token_child_left .ListToken .ListToken_box{
+    width: calc(100% / 5);
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+}
+.Page_list_token_child_left .ListToken .ListToken_box h4{
+    color: white;
+    font-size: 15px;
+}
+.Page_list_token_child_left .ListToken .ListToken_box h4 i{
+    float: right;
+}
+.Page_list_token_child_left .ListToken .ListToken_box h4 img{
+    float: right;
+    justify-content: space-between;
+    width: 20px;
+    height: 20px;
+}
+.Page_list_token_child_right .React_Paginate {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    width: 100%;
+    height: 8%;
+  }
+.Page_list_token_child_right .React_Paginate_detail{
+    margin: 0 auto;
+    width: 98%;
+    height: 88%;
+    border-radius: 12px;
+    margin-top: 2%;
+    /* box-shadow: 0px 0px 5px rgb(68, 65, 65); */
+}
+@media screen and (max-width:700px) {
+    .home_content_page_chart .detail_1{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .home_content_page_chart .detail_1 .Change_time{
+       display: none;
+    }
+    .Change_time_line_detail p{
+        font-size: 10px;
+    }
+    .Change_time_line_detail{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: none;
+    }
+    .home_content_page_chart .detail_1 .Rank_Name{
+        width: 100px;
+        height: 30px;
+    }
+    .home_content_page_chart .detail_1 .Rank_Name h3{
+        font-size: 10px;
+    }
+    .home_content_page_chart .detail_1 .Rank_Name .boxIMG{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+    .detail_1 .Price h3{
+        font-size: 10px;
+    }
+ .boxIMG .imgsize{
+        width: 20px;
+        height: 20px;
+        margin: 10px 0;
+    }
+    .Page_list_token_child_left .ListContent{
+        background-color: #FFFFFF;
+        color: black;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+    .Page_list_token_child_left{
+        background-color: #FFFFFF;
+        box-shadow: 0px 0px 5px rgb(68, 65, 65);
+    }
+    .ListToken{
+        background-color: black;
+    }
+    .Page_list_token_child_left .ListToken .ListToken_box h4{
+        font-size:10%;
+    }
+    .Page_list_token_child_left .ListToken .ListToken_box h4 img{
+       width: 10%;
+       height: 10%;
+    }
+    .pagination > li > a,
+    .pagination > li > span {
+      font-size: 25%;
+    }
+    .ListContent .ListToken_box{
+        font-size: 25%;
+    }
+    .Page_list_token_child_right .React_Paginate {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+      }
+}
+@media screen and (min-width:720px){
+    .home_content_page_chart{
+        height: 20%;
+    }
+    .Page_list_token_child_right .React_Paginate {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+      }
+      .Page_list_token_child_left .ListContent{
+        background-color: #FFFFFF;
+        color: black;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+    .Page_list_token_child_left{
+        box-shadow: 0px 0px 5px rgb(68, 65, 65);
+        background-color: #FFFFFF;
+    }
+    .ListToken{
+        background-color: black;
+    }
+    .Page_list_token_child_left .ListToken .ListToken_box h4{
+        font-size:13px;
+    }
+    .Page_list_token_child_left .ListToken .ListToken_box h4 img{
+       width: 10%;
+       height: 10%;
+    }
+}
+@media screen and (min-width:1000px){
+    .Page_list_token_child_left .ListToken .ListToken_box h4{
+        font-size: 13px;
+    }
+    .pagination > li > a,
+    .pagination > li > span {
+      font-size: 13px;
+    }
+    .Page_list_token_child_right .React_Paginate {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 8.5%;
+      }
+      .Page_list_token_child_left .ListContent{
+        background-color: #FFFFFF;
+        color: black;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+
+    }
+    .Page_list_token_child_left{
+        box-shadow: 0px 0px 5px rgb(68, 65, 65);
+        background-color: #FFFFFF;
+    }
+    .ListToken{
+        background-color: black;
+        
+    }
+    .Page_list_token_child_left .ListToken .ListToken_box h4{
+        font-size:13px;
+    }
+    .Page_list_token_child_left .ListToken .ListToken_box h4 img{
+       width: 10%;
+       height: 10%;
+    }
+}
