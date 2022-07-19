@@ -1,19 +1,29 @@
 
+import React,{useState,useEffect} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './component/Auth/Login';
-import Logout from './component/Auth/Logout';
-import Signup from './component/Auth/Signup';
-import Home from './component/Home/Home';
-import Order from './component/Order/Order';
-import User from './component/User/User';
+import Order from './Component/Order/Order';
+import Home from './Component/Home/Home';
+import Login from './Component/Auth/Login';
+import Signup from './Component/Auth/Signup';
+import Logout from './Component/Auth/Logout';
+import User from './Component/User/Users';
+import { getCurrentUser } from './Component/Auth/Services/AuthService';
+import Shop from './Component/UserShop/Shop';
+import Message from './Component/Message/Message';
+
 function App() {
+  
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    setUser(getCurrentUser());
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/User' element={<User/>}></Route>
-        <Route path='/Messages'></Route>
-        <Route path='/Analytic'></Route>
+        <Route path='/' element={user ? <Home/> : <Login/>}></Route>
+        <Route path='/User' element={<User/>} ></Route>
+        <Route path='/Messages' element={<Message/>}></Route>
+        <Route path='/Your_shop' element={<Shop/>}></Route>
         <Route path='/Order' element={<Order/>}></Route>
         <Route path='/Saved'></Route>
         <Route path='/Setting'></Route>

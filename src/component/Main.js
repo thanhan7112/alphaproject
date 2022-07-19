@@ -1,14 +1,30 @@
 import "./Main.css";
 import React, { useState, useEffect } from "react";
-import profile from "../Image/pet8.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { getCurrentUser } from "./Auth/Services/AuthService";
+import axios from "axios";
 const MainMenu = () => {
   const [btn, setBtn] = useState(true);
   const [user, setUser] = useState("");
   useEffect(() => {
     setUser(getCurrentUser());
   }, []);
+  const [DataUp, setDataUp] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:9000/api/data").then(res => setDataUp(res.data))
+  }, []);
+  var GetUp = DataUp.filter(element => {
+    return element.idUser === user._id
+  })
+  var avatar = GetUp.map(element => {
+    return element.avatar
+  })
+  const location = useLocation();
+
+  const {pathname} = location;
+
+  const splitLocation = pathname.split("/")
   return (
     <div className={btn.btn == true ? "sidebar active" : "sidebar"}>
       <div className="logo_content">
@@ -27,22 +43,8 @@ const MainMenu = () => {
         ></i>
       </div>
       <ul className="nav_list">
-        {/* <li>
-          <a>
-            <i
-              class="bx bx-search"
-              onClick={() => {
-                setBtn((prevState) => ({
-                  btn: !prevState.btn,
-                }));
-              }}
-            />
-            <input type="text" placeholder="Search..." />
-          </a>
-          <span className="tooltip">Search</span>
-        </li> */}
         <Link className="linktext" to="/">
-          <li>
+          <li className={splitLocation[1] === "" ? "activeNav" : ""}>
             <a>
               <i class="bx bx-grid-alt"></i>
               <span className="links_name">Dashboard</span>
@@ -51,7 +53,7 @@ const MainMenu = () => {
           </li>
         </Link>
         <Link className="linktext" to="/User">
-          <li>
+          <li className={splitLocation[1] === "User" ? "activeNav" : ""}>
             <a>
               <i class="bx bx-user"></i>
               <span className="links_name">User</span>
@@ -60,7 +62,7 @@ const MainMenu = () => {
           </li>
         </Link>
         <Link className="linktext" to="/Messages">
-          <li>
+          <li className={splitLocation[1] === "Messages" ? "activeNav" : ""}>
             <a>
               <i class="bx bx-conversation"></i>
               <span className="links_name">Messages</span>
@@ -68,17 +70,17 @@ const MainMenu = () => {
             <span className="tooltip">Messages</span>
           </li>
         </Link>
-        <Link className="linktext" to="/Analytic">
-          <li>
+        <Link className="linktext" to="/Your_shop">
+          <li className={splitLocation[1] === "Your_shop" ? "activeNav" : ""}>
             <a>
-              <i class="bx bx-pie-chart-alt-2"></i>
-              <span className="links_name">Analytic</span>
+            <i class='bx bxs-wrench'></i>
+              <span className="links_name">Your shop</span>
             </a>
-            <span className="tooltip">Analytic</span>
+            <span className="tooltip">Your shop</span>
           </li>
         </Link>
         <Link className="linktext" to="/File">
-          <li>
+          <li className={splitLocation[1] === "File" ? "activeNav" : ""}>
             <a>
               <i class="bx bx-folder"></i>
               <span className="links_name">File Manager</span>
@@ -87,7 +89,7 @@ const MainMenu = () => {
           </li>
         </Link>
         <Link className="linktext" to="/Order">
-          <li>
+          <li className={splitLocation[1] === "Order" ? "activeNav" : ""}>
             <a>
               <i class="bx bx-cart"></i>
               <span className="links_name">Order</span>
@@ -96,7 +98,7 @@ const MainMenu = () => {
           </li>
         </Link>
         <Link className="linktext" to="/Saved">
-          <li>
+          <li className={splitLocation[1] === "Saved" ? "activeNav" : ""}>
             <a>
               <i class="bx bx-heart"></i>
               <span className="links_name">Saved</span>
@@ -105,7 +107,7 @@ const MainMenu = () => {
           </li>
         </Link>
         <Link className="linktext" to="/Setting">
-          <li>
+          <li className={splitLocation[1] === "Setting" ? "activeNav" : ""}>
             <a>
               <i class="bx bx-cog"></i>
               <span className="links_name">Setting</span>
@@ -118,20 +120,20 @@ const MainMenu = () => {
         {user && (
           <div className="profile">
             <div className="profile_details">
-              <img src={user.avatar} alt="" />
+              <img src={avatar} alt="" />
               <div className="name_job">
                 <div className="name">{user.name}</div>
                 <div className="job">Web Designer</div>
               </div>
             </div>
-            <Link to="/login" style={{color:'white'}}>
+            <Link to="/logout" style={{color:'white'}}>
             <i class="bx bx-log-out" id="log_out"></i>
             </Link>
           </div>
         )}
         {!user && (
           <div className="profile">
-            <Link to="/logout">
+            <Link to="/login">
               <i class="bx bx-log-in" id="log_out"></i>
             </Link>
           </div>

@@ -8,6 +8,7 @@
   flex-direction: row;
   justify-content: center;
 }
+
 .UserBody .user_detail_Information {
   display: flex;
   width: 29%;
@@ -15,6 +16,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .user_detail_Information .table_user {
   display: flex;
   width: 90%;
@@ -23,6 +25,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
 .table_user .Avatar_user {
   width: 92%;
   height: 35%;
@@ -36,12 +39,14 @@
   background-color: #000000;
   box-shadow: 0px 0px 5px #7e8492;
 }
-.Avatar_user .bx.bxs-edit-alt{
+
+.Avatar_user .bx.bxs-edit-alt {
   font-size: 16px;
   padding: 1rem 0;
   color: white;
   cursor: pointer;
 }
+
 .Avatar_user .Avatar {
   margin: 0 auto;
   width: 200px;
@@ -49,23 +54,26 @@
   border-radius: 50%;
   border: 10px solid white;
 }
-.Avatar .avataruser{
+
+.Avatar .avataruser {
   width: 100%;
   height: 100%;
 }
+
 .Avatar_user .inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }
-.inputfile + label {
+
+.inputfile+label {
   display: flex;
   text-align: center;
   flex-direction: row;
-  text-align:center;
+  text-align: center;
   border-radius: 14px;
   justify-content: center;
   width: 160px;
@@ -77,28 +85,33 @@
   cursor: pointer;
   /* line-height: 2.5rem; */
 }
-.labeld{
+
+.labeld {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.labeld p{
+
+.labeld p {
   font-size: 10px;
 }
-.inputfile:focus + label,
-.inputfile + label:hover {
+
+.inputfile:focus+label,
+.inputfile+label:hover {
   background-color: #444446;
   color: white;
 }
-.bx.bx-folder-open {
+
+/* .bx.bx-folder-open {
   padding-right: 0.5rem;
-}
-.bx.bx-window-close{
+} */
+.bx.bx-window-close {
   font-size: 20px;
   color: white;
   cursor: pointer;
   padding-bottom: 1rem;
 }
+
 .Avatar_user .username_box {
   display: flex;
   flex-direction: row;
@@ -107,6 +120,7 @@
   font-size: 18px;
   width: 50%;
 }
+
 .table_user .list_box_user {
   width: 92%;
   height: 16%;
@@ -115,29 +129,33 @@
   margin-bottom: 1rem;
   background-color: #000000;
 }
+
 .send_token_box .list_box {
   height: calc(87.9% / 7);
   margin-top: 0.3%;
   width: 100%;
 }
+
 .UserBody .user_detail_earn {
   display: flex;
   width: 68%;
   flex-direction: column;
   height: 100%;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
-.user_detail_earn .list_earn{
- display: flex;
- width: 100%;
- height: 200px;
- flex-direction: row;
- align-items: center;
- justify-content: space-around;
- margin-bottom: 2rem;
+
+.user_detail_earn .list_earn {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 2rem;
 }
-.list_earn .list_earn_child{
+
+.list_earn .list_earn_child {
   display: flex;
   width: calc(94% / 3);
   height: 90%;
@@ -145,58 +163,92 @@
   border-radius: 14px;
   background-color: #000000;
 }
-.list_earn_child i{
+
+.list_earn_child i {
   padding: 2rem 2rem;
   font-size: 30px;
   color: white;
 }
-.user_detail_earn .purchase_box{
+
+.user_detail_earn .purchase_box {
   display: flex;
- width: 98%;
- height: 755px;
- flex-direction: row;
- align-items: center;
- justify-content: space-around;
- box-shadow: 0px 0px 5px #7e8492;
- border-radius: 14px;
- background-color: #000000;
+  width: 98%;
+  height: 755px;
+  flex-direction: column;
+  box-shadow: 0px 0px 5px #7e8492;
+  border-radius: 14px;
+  background-color: #000000;
 }
-.btnupdate{
- margin-left: 2.5rem;
- margin-top: 1rem;
-  width: 80px;
+.purchase_box .pay_history_header h3{
+  padding: 1rem 1rem;
+  color: white;
+}
+.purchase_box .pay_history_header{
+  display: flex;
+  flex-direction: row;
+}
+.purchase_box .pay_history{
+  cursor: pointer;
+  width: 100%;
+  height: 80px;
+  background-color: #7e8492;
+}
+.purchase_box .pay_history:hover{
+  transform: scale(1.02);
+  transition: 0.3s ease-in-out;
+  border-radius: 14px;
+}
+.btnupdate {
+  margin-top: 0.5rem;
+  width: 100%;
   height: 40px;
   border-radius: 12px;
   background-color: white;
-  cursor:pointer;
+  cursor: pointer;
   border: none;
   color: black;
 }
-h4{
+
+.FormUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+}
+
+h4 {
   color: white;
 }
-@media screen and (max-width:700px){
-  .UserBody{
+
+.btnupdate {
+  width: 80px;
+}
+
+@media screen and (max-width:700px) {
+  .UserBody {
     display: flex;
     width: 100%;
     margin: 0;
     flex-direction: column;
   }
-  .UserBody .user_detail_Information{
+
+  .UserBody .user_detail_Information {
     width: 100%;
     display: flex;
     flex-direction: column;
     /* height: 200px; */
     margin: 0;
   }
-  .user_detail_Information .table_user{
+
+  .user_detail_Information .table_user {
     width: 100%;
     display: flex;
     height: 300px;
     flex-direction: column;
     justify-content: start;
   }
-  .table_user .Avatar_user{
+
+  .table_user .Avatar_user {
     width: 90%;
     height: 100px;
     display: flex;
@@ -205,66 +257,103 @@ h4{
     justify-content: space-around;
     margin-bottom: 1rem;
   }
-  .Avatar_user .Avatar{
+
+  .Avatar_user .Avatar {
     /* margin-left: 1rem; */
     width: 80px;
     height: 80px;
   }
-  .Avatar_user .username_box{
+
+  .Avatar_user .username_box {
     font-size: 10px;
     margin-top: 0;
     margin-right: 1rem;
     display: flex;
     justify-content: center;
   }
-  .username_box i{
+
+  .username_box i {
     padding-right: 1rem;
   }
-  .table_user .list_box_user{
+
+  .table_user .list_box_user {
     width: 90%;
-    height: 60px;
   }
-  .UserBody .user_detail_earn{
+
+  .UserBody .user_detail_earn {
     width: 100%;
     display: flex;
     flex-direction: column;
   }
-  .user_detail_earn .list_earn{
+
+  .user_detail_earn .list_earn {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 90%;
     height: 80px;
   }
-  .list_earn .list_earn_child{
+
+  .list_earn .list_earn_child {
     display: flex;
     width: calc(96% / 3);
     height: 100%;
   }
-  .list_earn .list_earn_child i{
+
+  .list_earn .list_earn_child i {
     padding: 5px;
     font-size: 15px;
   }
-  .user_detail_earn .purchase_box{
+
+  .user_detail_earn .purchase_box {
     width: 90%;
     height: 200px;
   }
+
+  .FormUp {
+    width: 80px;
+  }
+
+  .FormUp .labeld {
+    width: 98%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .FormUp .labeld p {
+    display: none;
+  }
+
+  .FormUp .labeld i {
+    font-size: 20px;
+  }
+
+  .FormUp .btnupdate {
+    width: 80px;
+    height: 30px;
+  }
 }
-@media screen and (min-width:720px){
+
+@media screen and (min-width:720px) {
   .Avatar_user {
     display: flex;
     flex-direction: column;
   }
-  .Avatar_user .Avatar{
+
+  .Avatar_user .Avatar {
     width: 120px;
     height: 120px;
   }
-  .Avatar_user .username_box{
+
+  .Avatar_user .username_box {
     width: 80%;
     font-size: 12px;
   }
 }
-@media screen and (min-width:1281px){
+
+@media screen and (min-width:1281px) {
   .table_user .Avatar_user {
     width: 92%;
     height: 35%;
@@ -275,12 +364,14 @@ h4{
     border-radius: 14px;
     margin-top: 0.7rem;
   }
+
   .Avatar_user .Avatar {
     margin: 0 auto;
     width: 200px;
     height: 200px;
     border-radius: 50%;
   }
+
   .Avatar_user .username_box {
     display: flex;
     flex-direction: row;

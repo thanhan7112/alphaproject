@@ -1,17 +1,9 @@
-import React, { useState, useEffect, Component } from "react";
+import React, {Component } from "react";
 import "../Main.css";
 import "./Home.css";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
 import ReactPaginate from "react-paginate";
-import CoinDetail from "./CoinDetail/CoinDetail";
-function withRouter(Component) {
-  function ComponentWithRouter(props) {
-    let params = useParams();
-    return <Component {...props} params={params} />;
-  }
-  return ComponentWithRouter;
-}
+
 class HomeBody extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +15,7 @@ class HomeBody extends Component {
       getId: "",
       postData: [],
       tokenbyid: [],
+      // data: []
     };
     this.handlePageClick = this.handlePageClick.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -94,14 +87,22 @@ class HomeBody extends Component {
     const id = e.currentTarget.id;
     console.log("ID la" + id);
     axios.get(`https://api.coingecko.com/api/v3/coins/${id}`).then((res) => {
-      // const tokenbyid = res.data;
       this.setState({
         tokenbyid: res.data,
       });
       console.log("Tokenid" + id);
       console.log(this.state.tokenbyid);
     });
+    // axios.get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=14&interval=daily`).then((res) => {
+    //   this.setState(() => ({
+    //     data: res.data.prices,
+    //   }));
+    //   console.log("Tokenid" + id);
+    //   console.log(this.state.data);
+    // });
   }
+
+
   handlePageClick = (e) => {
     const selectedPage = e.selected;
     const offset = selectedPage * this.state.perPage;
@@ -119,13 +120,11 @@ class HomeBody extends Component {
     this.receivedData();
   }
   render() {
-    console.log(this.state.getId);
-
+  
     const idCoin = this.state.Coins.map((coin) => {
       return coin.id;
     });
     let isEqual;
-    // console.log(idCoin)
     for (let i = 0; i < idCoin.length; i++) {
       if (idCoin[i] == this.state.getId) {
         isEqual = true;
@@ -134,15 +133,11 @@ class HomeBody extends Component {
         isEqual = false;
       }
     }
-    const Coin = this.state.Coins.map((coin) => {
-      return coin.current_price;
-    });
-    // console.log("Day la list" + Coin);
     return (
       <div className="home_content_page">
-         {isEqual == true ? (
+
         <div className="home_content_page_chart">
-         
+          {isEqual == true ? (
             <div className="detail_1">
               <div className="Rank_Name">
                 <div className="boxIMG">
@@ -160,69 +155,69 @@ class HomeBody extends Component {
               <div className="Change_time">
                 <div className="Change_time_line">
                   <div className="Change_time_line_detail">
-                  {this.state.tokenbyid.market_data?.price_change_percentage_1h_in_currency ? (
-                    <p>
-                      1h {this.state.tokenbyid.market_data.price_change_percentage_1h_in_currency.usd.toFixed(
-                        1
-                      )}
-                      %
-                    </p>
-                  ) : null}
+                    {this.state.tokenbyid.market_data?.price_change_percentage_1h_in_currency ? (
+                      <p>
+                        1h {this.state.tokenbyid.market_data.price_change_percentage_1h_in_currency.usd.toFixed(
+                          1
+                        )}
+                        %
+                      </p>
+                    ) : null}
                   </div>
                   <div className="Change_time_line_detail">
-                  {this.state.tokenbyid.market_data?.price_change_percentage_24h_in_currency ? (
-                    <p>
-                      24h {this.state.tokenbyid.market_data.price_change_percentage_24h_in_currency.usd.toFixed(
-                        1
-                      )}
-                      %
-                    </p>
-                  ) : null}
+                    {this.state.tokenbyid.market_data?.price_change_percentage_24h_in_currency ? (
+                      <p>
+                        24h {this.state.tokenbyid.market_data.price_change_percentage_24h_in_currency.usd.toFixed(
+                          1
+                        )}
+                        %
+                      </p>
+                    ) : null}
                   </div>
                 </div>
                 <div className="Change_time_line">
                   <div className="Change_time_line_detail">
-                  {this.state.tokenbyid.market_data?.price_change_percentage_24h_in_currency ? (
-                    <p>
-                      7d {this.state.tokenbyid.market_data.price_change_percentage_7d_in_currency.usd.toFixed(
-                        1
-                      )}
-                      %
-                    </p>
-                  ) : null}
+                    {this.state.tokenbyid.market_data?.price_change_percentage_24h_in_currency ? (
+                      <p>
+                        7d {this.state.tokenbyid.market_data.price_change_percentage_7d_in_currency.usd.toFixed(
+                          1
+                        )}
+                        %
+                      </p>
+                    ) : null}
                   </div>
                   <div className="Change_time_line_detail">
-                  {this.state.tokenbyid.market_data?.price_change_percentage_24h_in_currency ? (
-                    <p>
-                      14d {this.state.tokenbyid.market_data.price_change_percentage_14d_in_currency.usd.toFixed(
-                        1
-                      )}
-                      %
-                    </p>
-                  ) : null}
+                    {this.state.tokenbyid.market_data?.price_change_percentage_24h_in_currency ? (
+                      <p>
+                        14d {this.state.tokenbyid.market_data.price_change_percentage_14d_in_currency.usd.toFixed(
+                          1
+                        )}
+                        %
+                      </p>
+                    ) : null}
                   </div>
                 </div>
                 <div className="Change_time_line">
-                <div className="Change_time_line_detail">
-                {this.state.tokenbyid.market_data?.price_change_percentage_24h_in_currency ? (
-                    <p>
-                      30d {this.state.tokenbyid.market_data.price_change_percentage_30d_in_currency.usd.toFixed(
-                        1
-                      )}
-                      %
-                    </p>
-                  ) : null}
-                </div>
-                <div className="Change_time_line_detail">
-                {this.state.tokenbyid.market_data?.price_change_percentage_24h_in_currency ? (
-                    <p>
-                      1y {this.state.tokenbyid.market_data.price_change_percentage_1y_in_currency.usd.toFixed(
-                        1
-                      )}
-                      %
-                    </p>
-                  ) : null}
-                </div>
+                  <div className="Change_time_line_detail">
+                    {this.state.tokenbyid.market_data?.price_change_percentage_24h_in_currency ? (
+                      <p>
+                        30d {this.state.tokenbyid.market_data.price_change_percentage_30d_in_currency.usd.toFixed(
+                          1
+                        )}
+                        %
+                      </p>
+                    ) : null}
+                  </div>
+                  <div className="Change_time_line_detail">
+                    {this.state.tokenbyid.market_data?.price_change_percentage_24h_in_currency ? (
+                      <p>
+                        1y {this.state.tokenbyid.market_data.price_change_percentage_1y_in_currency.usd.toFixed(
+                          1
+                        )}
+                        %
+                      </p>
+                    ) : null}
+                  </div>
                 </div>
               </div>
               {/* <div className="Price">
@@ -230,14 +225,16 @@ class HomeBody extends Component {
                 <h3>{this.state.tokenbyid.market_data.current_price.usd.toLocaleString()} <i class='bx bx-dollar' ></i></h3>
               ) : null}</h3>
             </div> */}
-            <div className="detail_2"></div>
+              <div className="detail_2">
+
+              </div>
             </div>
-            
-         
+
+          ) : (
+            null
+          )}
         </div>
-         ) : (
-          null
-        )}
+
         <div className="home_content_page_list_token">
           <div className="Page_list_token_child_left">
             <div className="ListContent">
@@ -262,6 +259,8 @@ class HomeBody extends Component {
           </div>
           <div className="Page_list_token_child_right">
             <div className="React_Paginate">
+
+              {/* <Doughnut data={[1,2,3,5,6]}/> */}
               <ReactPaginate
                 previousLabel={<i class="bx bx-chevron-left"></i>}
                 nextLabel={<i class="bx bx-chevron-right"></i>}
@@ -283,4 +282,4 @@ class HomeBody extends Component {
     );
   }
 }
-export default withRouter(HomeBody);
+export default HomeBody;

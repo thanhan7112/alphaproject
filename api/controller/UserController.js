@@ -30,28 +30,3 @@ exports.Me = async (req, res) => {
     res.send("An error occured");
   }
 };
-exports.UpdateAvatar = async (req, res) => {
-  const url = req.protocol + "://" + req.get("host");
-  const UpdateAvatar = {
-    name: req.body.name,
-    avatar:  url + "/public/" + req.file.filename,
-  };
-  User.findByIdAndUpdate(
-    { _id: req.params._id },
-    UpdateAvatar,
-    function (err, response) {
-      if (err) {
-        res.status(201).json({
-          code: 201,
-          message: "Error Update Data",
-        });
-      } else {
-        res.status(200).json({
-          code: 200,
-          message: "Update Data Successfully!",
-          data: response,
-        });
-      }
-    }
-  );
-};

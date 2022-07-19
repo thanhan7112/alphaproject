@@ -1,17 +1,272 @@
- .Oder_Content{
-    overflow: hidden;
-    display: flex;
-    height: calc(100% - 5%);
-    align-items: center;
-    flex-direction: column;
-    margin: 12px;
-}
+ .Oder_Content {
+     overflow: hidden;
+     display: flex;
+     height: calc(100% - 5%);
+     flex-direction: row;
+     margin: 12px;
+     justify-content: space-between;
+ }
 
-.Oder_Content .Detail_Order {
-    display: flex;
-    width: 100%;
-    border-radius: 12px;
-    height:100%;
-    margin-bottom: 1%;
+ .Oder_Content .Detail_Order {
+     display: flex;
+     width: 79%;
+     border-radius: 12px;
+     height: 100%;
+     margin-bottom: 1%;
+     flex-direction: column;
+ }
+
+ .Detail_Order .Explore_BoxUser {
+     display: flex;
+     flex-direction: row;
+     margin-top: 1rem;
+     width: 100%;
+     height: 260px;
+     border-radius: 14px;
+     justify-content: space-between;
+ }
+
+ .Detail_Order .Order {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     border-radius: 14px;
+     justify-content: space-between;
+ }
+
+ .Order .OrderNum {
+     align-items: center;
+     width: 100%;
+     border-radius: 14px;
+     margin-top: 1rem;
+ }
+ .MuiPaper-root {
+     background-color: black;
+     border-radius: 8px;
+ }
+
+ .MuiPaper-root:hover {
+     transform: scale(1.04);
+     transition: 0.3s ease-in-out;
+ }
+ .MuiButtonBase-root:hover {
     background-color: #7D7D7D;
+ }
+ .Order .OrderSelect {
+     display: flex;
+     flex-direction: row;
+     width: 100%;
+     height: 60px;
+     border-radius: 14px;
+     margin-top: 2rem;
+ }
+ .column {
+    float: left;
+    width: 20%;
+    padding: 10px 10px;
+  }
+ .OrderSelect li {
+     width: 120px;
+     height: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: black;
+     font-size: 16px;
+     cursor: pointer;
+     border-radius: 14px;
+ }
+
+ .OrderSelect li i {
+     padding-right: 0.5rem;
+ }
+
+ .OrderSelect li:hover {
+     background-color: black;
+     color: white;
+     border-radius: 14px;
+     transform: scale(1.08);
+     transition: 0.3s ease-in-out;
+ }
+
+ .Coll,
+ .Art,
+ .Utility {
+     background-color: #7e8492;
+ }
+
+ .Coll,
+ .Col {
+     margin: 0 0.5rem;
+ }
+
+ .Art,
+ .Ar {
+     margin-left: 0.3rem;
+ }
+
+ .Explore_BoxUser .Explore {
+     display: flex;
+     flex-direction: column;
+     width: 81%;
+     height: 100%;
+     box-shadow: 2px 2px 5px #7e8492;
+     border-radius: 14px;
+     border: 1px solid #7e8492;
+ }
+ .Explore img{
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
 }
+ .Explore_BoxUser .BoxUser {
+     display: flex;
+     width: 18%;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+     border-radius: 50%;
+     border: 5px;
+     background-image: linear-gradient(to right bottom, #6a5af9, #f62682);
+ }
+
+ .BoxUser .boxed-child {
+     width: 95%;
+     height: 95%;
+     border-radius: inherit;
+     background-color: white;
+ }
+
+ .BoxUser .boxed-child img {
+     width: 100%;
+     height: 100%;
+ }
+
+ .Oder_Content .Top_Artist {
+     display: flex;
+     flex-direction: column;
+     width: 20%;
+     height: 730px;
+     border-radius: 14px;
+     align-items: center;
+     justify-content: space-around;
+
+ }
+
+ .Top_Artist .TopSeller {
+     display: flex;
+     flex-direction: row;
+     background-color: black;
+     border-radius: 14px;
+     width: 94%;
+     height: calc(80% / 5);
+ }
+
+ .TopSeller:hover {
+     transform: scale(1.02);
+     transition: .3s ease-in-out;
+     cursor: pointer;
+ }
+
+ .card {
+     displaY: block;
+     float: left;
+     width: 33.33%;
+     text-align: center;
+     color: white;
+     font-family: 'Calibri';
+ }
+
+ .icon {
+     width: 50px;
+     height: 25px;
+     /*half of width*/
+     margin: auto;
+     display: block;
+     border-radius: 50px 50px 0 0;
+ }
+
+ .icon .bx {
+     margin-top: 10px;
+ }
+ .MuiButton-root{
+    color: white;
+ }
+.MuiButton-root:hover{
+    background-color: rgb(48, 133, 155);
+    color: white;
+}
+.MuiButtonBase-root .Box_Ava{
+    margin-left: 37%;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    border: 2px solid white;
+}
+.Box_Ava img{
+    width: 100%;
+    height: 100%;
+}
+ @media screen and (max-width:700px) {
+     .Explore_BoxUser .Explore {
+         width: 100%;
+         z-index: 1;
+         position: relative;
+     }
+
+     .Explore_BoxUser .BoxUser {
+         display: none;
+     }
+
+     .home_content .Oder_Content {
+         flex-direction: column-reverse;
+     }
+
+     .Oder_Content .Top_Artist {
+         flex-direction: row;
+         width: 100%;
+         height: 10%;
+     }
+
+     .Top_Artist .TopSeller {
+         width: calc(90% /5);
+         height: 86%;
+         border-radius: 10px;
+     }
+
+     .Oder_Content .Detail_Order {
+         width: 100%;
+         margin-top: 1rem;
+     }
+     .column {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .Order .OrderSelect{
+        width: 96%;
+      }
+ }
+ @media screen and (min-width:701px) {
+    .Explore_BoxUser .Explore{
+        width: 70%;
+    }
+    .Explore_BoxUser .BoxUser{
+        width: 28%;
+    }
+    .column {
+        width: 50%;
+        margin-bottom: 20px;
+      }
+ }
+ @media screen and (min-width:1281px){
+    .Explore_BoxUser .Explore{
+        width: 81%;
+    }
+    .Explore_BoxUser .BoxUser{
+        width: 18%;
+    }
+    .column {
+        width: 20%;
+        margin-bottom: 20px;
+      }
+  }

@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+
 import jwtDecode from 'jwt-decode'
 import axios from 'axios'
 export function login(data){

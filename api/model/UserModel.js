@@ -5,10 +5,6 @@ const Joi = require('joi');
 const JWTPRIVATEKEY = 'nguyenthanhan7112001';
 
 const userSchema = Schema({
-    _id: mongoose.Schema.Types.ObjectId,
-    avatar:{
-        type: String
-    },
     name: {
         type: String,
         require: true
@@ -27,7 +23,7 @@ const userSchema = Schema({
 
 userSchema.methods.generateAuthToken = function () {
     const token = jwt.sign({
-        _id: this._id, name: this.name , avatar: this.avatar
+        _id: this._id, name: this.name ,email: this.email
     }, JWTPRIVATEKEY, {expiresIn:"1h"});
     return token;
 };
